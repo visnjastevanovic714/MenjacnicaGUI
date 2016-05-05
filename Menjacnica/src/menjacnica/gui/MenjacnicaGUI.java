@@ -202,6 +202,16 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnIzbrisiKurs() {
 		if (btnIzbrisiKurs == null) {
 			btnIzbrisiKurs = new JButton("Izbrisi kurs");
+			btnIzbrisiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int red = getTable().getSelectedRow();
+					if (red >= 0) {
+						GUIKontroler.obrisiKurs(red);
+					} else {
+						JOptionPane.showMessageDialog(getTable(), "Izaberite kurs koji zelite da obrisete !", "Greska pri brisanju", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			});
 			btnIzbrisiKurs.setPreferredSize(new Dimension(100, 25));
 		}
 		return btnIzbrisiKurs;
