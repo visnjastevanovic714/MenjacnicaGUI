@@ -195,6 +195,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmIzvrsiZamenu() {
 		if (mntmIzvrsiZamenu == null) {
 			mntmIzvrsiZamenu = new JMenuItem("Izvrsi zamenu");
+			mntmIzvrsiZamenu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.pokreniIzvrsiZamenuGui();
+				}
+			});
 		}
 		return mntmIzvrsiZamenu;
 	}
@@ -212,7 +217,7 @@ public class MenjacnicaGUI extends JFrame {
 					}
 				}
 			});
-			btnIzbrisiKurs.setPreferredSize(new Dimension(100, 25));
+			btnIzbrisiKurs.setPreferredSize(new Dimension(130, 25));
 		}
 		return btnIzbrisiKurs;
 	}
@@ -225,7 +230,7 @@ public class MenjacnicaGUI extends JFrame {
 					GUIKontroler.pokreniDodajKursGui();
 				}
 			});
-			btnDodajKurs.setPreferredSize(new Dimension(100, 25));
+			btnDodajKurs.setPreferredSize(new Dimension(130, 25));
 		}
 		return btnDodajKurs;
 	}
@@ -233,7 +238,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnIzvrsiZamenu() {
 		if (btnIzvrsiZamenu == null) {
 			btnIzvrsiZamenu = new JButton("Izvrsi zamenu");
-			btnIzvrsiZamenu.setPreferredSize(new Dimension(100, 25));
+			btnIzvrsiZamenu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					GUIKontroler.pokreniIzvrsiZamenuGui();
+				}
+			});
+			btnIzvrsiZamenu.setPreferredSize(new Dimension(130, 25));
 		}
 		return btnIzvrsiZamenu;
 	}

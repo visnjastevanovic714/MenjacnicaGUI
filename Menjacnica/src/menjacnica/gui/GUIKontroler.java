@@ -9,6 +9,7 @@ public class GUIKontroler {
 
 	private static MenjacnicaGUI gui;
 	private static DodajKursGUI dodajKursGui;
+	private static IzvrsiZamenuGUI izvrsiZamenuGui;
 
 	public static void exit() {
 		int izbor = JOptionPane.showConfirmDialog(gui.getContentPane(), "Da li zelite da izadjete iz programa?",
@@ -82,6 +83,27 @@ public class GUIKontroler {
 			JOptionPane.showMessageDialog(gui.getContentPane(), "Kurs nije obrisan", "Poruka", JOptionPane.ERROR_MESSAGE);
 		}
 	
+	}
+	public static void pokreniIzvrsiZamenuGui() {
+		if (otvorenIzvrsiZamenuGui()) {
+			izvrsiZamenuGui.toFront();
+			return;
+		}
+		
+		izvrsiZamenuGui = new IzvrsiZamenuGUI();
+		izvrsiZamenuGui.setLocationRelativeTo(null);
+		izvrsiZamenuGui.setVisible(true);
+	}
+	
+	public static void zatvoriIzvrsiZamenuGui() {
+		if (otvorenIzvrsiZamenuGui()) {
+			izvrsiZamenuGui.dispose();
+			izvrsiZamenuGui = null;
+		}	
+	}
+	
+	private static boolean otvorenIzvrsiZamenuGui() {
+		return (izvrsiZamenuGui != null);
 	}
 
 	/**
